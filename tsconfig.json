@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es2018",
+    "module": "esnext",
+    "lib": ["esnext", "DOM"],
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "rootDir": "./",
+    "outDir": "./dist",
+    "paths": {
+      "tslib": ["node_modules/tslib/tslib.d.ts"]
+    }
+  },
+  "include": [
+    ".vitepress/plugins/**/*.mts",
+  ],
+  "exclude": ["node_modules", "dist"]
+}

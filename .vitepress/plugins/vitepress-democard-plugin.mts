@@ -2,9 +2,6 @@ import { Plugin } from 'vitepress'
 import path from 'node:path';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
-import {
-    codeToHtml,
-} from 'shiki'
 
 function replaceAsync(str: string, match: RegExp, replacer: (substring: string, ...args: any[]) => Promise<string>) {
     const promises: Promise<string>[] = []
@@ -33,19 +30,13 @@ export const vitepressDemoCardPlugin: Plugin = {
                 if (!demoPath) return match;
                 const filePath = path.resolve(id, '..', demoPath);
                 const fileContent = fs.readFileSync(filePath, 'utf-8');
-                let html = await codeToHtml(fileContent, {
-                    lang: 'vue',
-                    theme: 'vitesse-light',
-                    // transformers: [],
-                })
-
-                html = JSON.stringify(html.replace(/"/g, "'")).replace(/\\n/g, '\r\n').replace(/&#x3C;/g, '<span>&#x3C;</span>')
+                const code = encodeURIComponent(fileContent)
                 const demoComp = `Demo${md5Hash(demoPath)}`
                 const lang = path.extname(demoPath).slice(1)
                 importSet.add(`const ${demoComp} = defineAsyncComponent(() => import('${demoPath}'))`)
                 return `
                     <Suspense>
-                        <DemoContainer code=${html} lang=${lang}>
+                        <DemoContainer code="${code}" lang=${lang}>
                             <${demoComp} />
                         </DemoContainer>
                         <template #fallback>Loading demo...</template>

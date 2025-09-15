@@ -3,3 +3,4 @@
 node_modules
 newer-join
 .xs_commit.json
+dist
