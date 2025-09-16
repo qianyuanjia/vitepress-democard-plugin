@@ -1,6 +1,6 @@
 {
   "name": "vitepress-democard-plugin",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "一个 VitePress 插件，可以快速生成交互式 Demo 演示和代码示例卡片，让你的文档更生动直观。",
   "keywords": [
     "vitepress",
@@ -26,7 +26,8 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview",
-    "prepublishOnly": "rollup --config rollup.config.mts"
+    "prepublishOnly": "rollup --config rollup.config.mts",
+    "pub": "npm version patch && npm publish --registry=https://registry.npmjs.org/"
   },
   "files": [
     "dist",
