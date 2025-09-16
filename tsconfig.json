@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es2018",
-    "module": "esnext",
-    "lib": ["esnext", "DOM"],
+    "module": "nodenext",
+    "lib": ["ESNext"],
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "strict": true,
@@ -18,7 +18,7 @@
     }
   },
   "include": [
-    ".vitepress/plugins/**/*.mts",
+    "./plugins/**/*.mts",
   ],
   "exclude": ["node_modules", "dist"]
 }

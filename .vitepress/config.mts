@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { vitepressDemoCardPlugin } from './plugins/vitepress-democard-plugin.mts';
+import { vitepressDemoCardPlugin } from '../plugins/vitepress-democard-plugin.mts';
 
 
 // https://vitepress.dev/reference/site-config
@@ -11,15 +11,6 @@ export default defineConfig({
       {
         text: '文档站简介',
         link: '/'
-      },
-      {
-        text: '直播技术',
-        items: [
-          {
-            text: 'TCPlayer演示',
-            link: '/living-tech/tcplayer.md'
-          }
-        ]
       },
       {
         text: 'Canvas',

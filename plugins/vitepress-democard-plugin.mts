@@ -2,6 +2,8 @@ import { Plugin } from 'vitepress'
 import path from 'node:path';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
+// @ts-ignore
+import DemoContainerCode from './DemoContainer.txt?raw'
 
 function replaceAsync(str: string, match: RegExp, replacer: (substring: string, ...args: any[]) => Promise<string>) {
     const promises: Promise<string>[] = []
@@ -18,7 +20,8 @@ function md5Hash(input: string): string {
     return hash.digest('hex');
 }
 
-
+const virtualModuleId = 'virtual:DemoContainer'
+const resolvedId = `vt__DemoContainer.vue`
 export const vitepressDemoCardPlugin: Plugin = {
     name: 'vitepress-democard-plugin',
     enforce: 'pre',
@@ -48,7 +51,7 @@ export const vitepressDemoCardPlugin: Plugin = {
                 const head = `
                 <script setup>
                     import { defineAsyncComponent } from 'vue'
-                    import DemoContainer from '@/components/DemoContainer/index.vue';
+                    import DemoContainer from '${virtualModuleId}';
                     ${Array.from(importSet).join('\n')}
                 </script>
                 `.trim() + '\n'
@@ -60,5 +63,15 @@ export const vitepressDemoCardPlugin: Plugin = {
                 map: null,
             }
         }
-    }
+    },
+    resolveId(id) {
+        if (id === virtualModuleId) {
+            return resolvedId // 告诉 Vite 处理这个 ID
+        }
+    },
+    load(id) {
+        if (id === resolvedId) {
+            return DemoContainerCode
+        }
+    },
 }

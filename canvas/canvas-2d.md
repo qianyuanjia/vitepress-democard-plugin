@@ -16,5 +16,3 @@ Canvas：Canvas**绘制的是像素，不是具体的形状或者矢量，也没
 ## Canvas简单绘图介绍
 绘制一个红色矩形：
 <$./components/Demo-1/index.vue$>
-
-
