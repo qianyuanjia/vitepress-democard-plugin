@@ -16,13 +16,13 @@
 
 ## 🌰 展示效果图
 - demo卡片折叠
-![demo卡片折叠](https://raw.githubusercontent.com/qianyuanjia/vitepress-democard-plugin/main/assets/logo.pngassets/1.jpeg)
+![demo卡片折叠](https://raw.githubusercontent.com/qianyuanjia/vitepress-democard-plugin/refs/heads/main/assets/1.jpeg)
 
 - deme卡片展开
-![demo卡片折叠态](https://raw.githubusercontent.com/qianyuanjia/vitepress-democard-plugin/main/assets/logo.pngassets/2.jpeg)
+![demo卡片折叠态](https://raw.githubusercontent.com/qianyuanjia/vitepress-democard-plugin/refs/heads/main/assets/2.jpeg)
 
 - 暗色主题
-![暗色主题](https://raw.githubusercontent.com/qianyuanjia/vitepress-democard-plugin/main/assets/logo.pngassets/3.jpeg)
+![暗色主题](https://raw.githubusercontent.com/qianyuanjia/vitepress-democard-plugin/refs/heads/main/assets/3.jpeg)
 
 ## 📦 安装
 
